@@ -10,7 +10,8 @@ This program accepts a last name and GPA input
 
 
 # Variables
-fName = ""  # Input for students last name
+fName = "" # Input for students first name
+lName = ""  # Input for students last name
 gpa = 0.0 # Input for students GPA
 
 # Static variavles
@@ -20,23 +21,26 @@ sentinalValue = "ZZZ"
 
 
 # Housekeeping
-fName = input(f"Enter a students name. Or enter {sentinalValue} to exit :")
+lName = input(f"Enter a students last name. Or enter {sentinalValue} to exit :")
 
 ''' main program body '''
-while fName != sentinalValue:
+while lName != sentinalValue:
     
+    # Get the students first name
+    fName = input(f"What is {lName}'s first name? :")
+
     # Get the GPA of the student
-    gpa = float(input(f"What is {fName}'s GPA? :"))
+    gpa = float(input(f"What is {fName} {lName}'s GPA? :"))
     
     # Test the GPA
     if gpa >= deansListThreshold:
-        print(f"{fName} is eligible for Deans List.")
+        print(f"{fName} {lName} is eligible for Deans List.")
     elif gpa >= honorRollThreshold:
-        print(f"{fName} is eligible for Honor Roll.")
+        print(f"{fName} {lName} is eligible for Honor Roll.")
     else:
-        print(f"{fName} is not eligible.")
+        print(f"{fName} {lName} is not eligible.")
 
     # get the last name of the student
-    fName = input(f"Enter another students name. Or enter {sentinalValue} to exit :")
+    lName = input(f"Enter another students last name. Or enter {sentinalValue} to exit :")
 
 print("End of program.")
